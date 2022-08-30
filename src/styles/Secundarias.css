@@ -1,0 +1,160 @@
+:root {
+    --ff-heading: 'Poiret One', cursive;
+    --ff-body: 'Voltaire', sans-serif;
+
+    /* colores */
+
+    --col-principal: #F2B366;
+    --col-secundario: #F2E6B6;
+    --adicional: #5B7876;
+    --col-negro: #000000;
+
+    --transicion: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.Wrap {
+    background-color: rgb(20, 20, 20);
+    padding-inline: 20px;
+}
+
+h2 {
+    font-family: "Voltaire";
+    color: var(--col-principal);
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h3 {
+    font-family: "Poiret One";
+    font-size: 1.7rem;
+    color: #fff;
+    margin: 10px 0;
+}
+
+
+.Wrap p {
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 27px;
+}
+
+.Wrap article {
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.Wrap article>h3 {
+    align-self: flex-start;
+    position: relative;
+}
+
+.Wrap article>h3::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 100%;
+    width: 200%;
+    height: 1px;
+    background-color: #5B7876;
+    margin-block: 5px;
+}
+
+.Wrap article>img {
+    width: 40%;
+    height: 70%;
+}
+
+/* INFO */
+
+.wrap_info p {
+    padding-bottom: 10px;
+    margin-top: 5px;
+    text-align: justify;
+}
+
+.importante {
+    color: #ffc47c;
+}
+
+.wrap_info>img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: 10px 0;
+}
+
+.caracteristicas {
+    padding: 0 20px;
+}
+
+.caracteristicas h4 {
+    font-family: "Poiret One";
+    font-size: 1.8rem;
+    color: #27ec9ab2;
+    margin: 10px 0;
+}
+
+.caracteristicas img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: 10px 0;
+}
+
+.caracteristicas ul>li {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-top: 3px;
+}
+
+.wrap_info {
+    padding-bottom: 30px;
+}
+
+
+
+/* Contacto */
+
+
+/* MEDIAQUERIE */
+@media (max-width: 1000px) {
+
+    .Wrap{
+        padding-top: 80px;
+    }
+    .Wrap article {
+        overflow: hidden;
+    }
+
+    .Wrap article>img {
+        width: 100%;
+        height: 100%;
+        max-width: 600px;
+        
+    }
+
+    .wrap_info {
+        overflow: hidden;
+    }
+
+    .caracteristicas img {
+        position: relative;
+        left: 0%;
+        transform: translate(0%, 0%);
+        max-width: 100%;
+    }
+
+
+    .caracteristicas {
+        padding: 0 10px;
+    }
+}
+
+

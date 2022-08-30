@@ -1,0 +1,121 @@
+:root {
+    --ff-heading: 'Poiret One', cursive;
+    --ff-body: 'Voltaire', sans-serif;
+
+    /* colores */
+
+    --col-principal: #F2B366;
+    --col-secundario: #F2E6B6;
+    --adicional: #5B7876;
+    --col-negro: #000000;
+
+    --transicion: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h2 {
+    font-family: "Voltaire";
+    color: var(--col-principal);
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h3 {
+    font-family: "Poiret One";
+    font-size: 1.7rem;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.mensaje-correcto{
+    font-size: 1.3rem !important;
+    color: #222;
+    position: relative;
+    top: 50px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: auto;
+    font-family:  'Lucida Sans Unicode', sans-serif;
+    transition: all 1s var(--transicion);
+}
+
+.msg-loading {
+    font-size: 1.3rem !important;
+    color: #fff;
+    position: relative;
+    top: 50px;
+    background-color: #222;
+    padding: 10px 20px;
+    margin: auto;
+    animation: enviando 1s linear infinite;
+    font-family:  'Lucida Sans Unicode', sans-serif;
+    transition: all 1s var(--transicion);
+}
+
+@keyframes enviando {
+    from{
+        color: #222;
+    }
+    to{
+        color: #ffffff;
+    }
+}
+
+form {
+    width: 500px;
+    position: relative;
+    background-color: #fff8dd;
+
+    padding: 20px;
+}
+
+.form-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-items > *:focus{
+    outline: 1px solid var(--adicional);
+    outline-offset: 2px;
+    z-index: 2;
+
+}
+
+form label {
+    font-size: 1.3rem;
+    font-family: var(--ff-body);
+    margin-bottom: 5px;
+}
+
+.form-items>input {
+    padding: 5px 3px 5px;
+    border: 1px solid var(--adicional);
+}
+
+.form-items textarea {
+    padding: 10px 5px;
+    resize: none;
+}
+
+button[type=submit] {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    background-color: var(--adicional);
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

@@ -1,0 +1,122 @@
+/* Menu y logo */
+header {
+    display: block;
+    width: 100%;
+    box-shadow: inset 0 0 120px 100px rgb(0, 0, 0);
+
+    background-size: cover;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    padding-top: 10px;
+    display: block;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-size: clamp(2rem, 2vw + 2rem, 5rem);
+    font-family: var(--ff-heading);
+
+    text-shadow: 1px 1px 1px #000000;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: linear-gradient(to right, var(--col-negro), #335c59, var(--col-negro));
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+    height: 75px;
+    padding: 5px 0;
+    border-radius: 10px;
+
+}
+
+/* Iconos costados */
+nav::after {
+    position: absolute;
+    content: "";
+    background-image: url(/public/assets/decor/menu.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+}
+
+nav::before {
+    position: absolute;
+    content: "";
+    background-image: url(/public/assets/decor/menu.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+}
+
+
+nav ul {
+    list-style: none;
+    border: 4px double white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.nav-item {
+    padding: 15px;
+    transition: all .5s ease;
+
+}
+
+.nav-item a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-family: var(--ff-body);
+}
+
+.nav-item:hover,
+.nav-item:hover a {
+    transform: scale(1.25);
+    color: var(--col-principal);
+}
+
+
+@media (max-width: 1070px) {
+    .nav-item a {
+        font-size: 1.25rem;
+    }
+}
+
+
+@media (max-width: 1000px) {
+  
+    nav{
+        background: linear-gradient(to right, var(--col-negro), #1c2c2b, var(--col-negro));
+        height: 50vh;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul{
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        z-index: 10px;
+       
+    }
+}
+
+/* Crear clase nav extended, cuando se llegue a una pantalla menor a 1000 px que la altura del nav
+sea igual que desktop pero con un unico icono al medio que cuando se haga click extienda el nav*/

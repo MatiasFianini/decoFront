@@ -1,0 +1,205 @@
+
+main{
+    z-index: 0;
+    background: linear-gradient(to bottom, rgb(26, 26, 26), rgb(7, 6, 6));
+    width: 100%;    
+    box-shadow: inset 0 0 120px 100px rgb(0, 0, 0);
+    background-image: url(/public/assets/decor/fondo1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  main::before{
+    z-index: -3;
+    position: absolute;
+    content: "";
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: url(/public/assets/decor/ruido.png);
+    animation: ruido 1s  infinite steps(5);
+  }
+  
+  /* Luz general*/
+
+  .apagado{
+    z-index: 3;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #000000; 
+    transition: all 3s ease-in;
+  }
+  
+  .prendido{
+    z-index: 0;
+    position: absolute;
+    transition: all 3s ease-in;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff00; 
+  }
+
+
+  @keyframes ruido {
+  
+  0%, 100%{ transform: translate(0, 0);}
+  10% { transform: translate(-5%,5%);}
+  30%{ transform: translate(10%, 20%);}
+  60%{ transform: translate(20%, 20%);}
+  90%{ transform: translate(-9%, -4%);}
+  }
+
+  
+/* Modelo 3d */
+.escena{
+ 
+  overflow: hidden;
+  margin:  0px 5px;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+model-viewer{
+  position: relative;
+  top: -20px;
+  width: 500px !important;
+  height: 470px;
+}
+
+#lampara{
+z-index: 10;
+position: absolute;
+left: 50px;
+top: 40px;
+max-width: 180px;
+max-height: 180px;
+cursor: pointer;
+transition: all 1s var(--transicion);
+}
+
+
+/* LUZ Halo de */
+.haloPrendido{
+  z-index: 5;
+  position: absolute;
+  left: 70px;
+  top: 100px;
+  background: radial-gradient(#fdcb00d8, #9c7224c4); 
+  width: 150px;
+  height: 100px;
+  filter: blur(50px);
+  transition: all 1s var(--transicion);
+}
+
+.haloApagado{
+  z-index: 5;
+  position: absolute;
+  left: 70px;
+  top: 100px;
+  background: radial-gradient(#424242d8, #3b3b3bc4); 
+  width: 150px;
+  height: 100px;
+  filter: blur(50px);
+  transition: all 1s var(--transicion);
+}
+
+
+.iluminacion:hover .haloApagado, .iluminacion:hover .haloPrendido{
+  transform: scale(1.15);
+}
+
+
+/* media querie */
+@media (max-width: 800px){
+
+  .escena{
+    overflow: hidden;
+    margin:  0px 5px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .iluminacion{
+    margin-top: 20vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 180px;
+   
+  }  
+
+
+  #lampara{
+  z-index: 10;
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+  max-width: 180px;
+  max-height: 180px;
+  cursor: pointer;
+  transition: all 1s var(--transicion);
+  }
+  
+  
+  /* LUZ */
+  .haloPrendido{
+    z-index: 5;
+    position: absolute;
+    top: auto;
+    left: auto;
+    background: radial-gradient(#fdcb00d8, #9c7224c4); 
+    width: 150px;
+    height: 100px;
+    filter: blur(30px);
+    transition: all 1s var(--transicion);
+  
+  }
+
+  .haloApagado{
+    z-index: 5;
+    position: absolute;
+    top: auto;
+    left: auto;
+    background: radial-gradient(#424242d8, #3b3b3bc4); 
+    width: 150px;
+    height: 100px;
+    filter: blur(30px);
+    transition: all 1s var(--transicion);
+  
+  }
+
+  model-viewer{
+    margin-top: 5vh;
+    position: relative;
+    top: 0px;
+    width: 350px !important;
+    height: 470px;
+  }
+  
+  .iluminacion:hover .luz{
+    transform: scale(1.2);
+  }
+  
+
+}

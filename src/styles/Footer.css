@@ -1,0 +1,53 @@
+.footer{
+   
+   z-index: 0;
+    background-image: url(/public/assets/decor/fondo1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px 80px 100px 40px rgb(0, 0, 0), inset 0px -5px 50px 0px rgb(0, 0, 0);
+}
+
+.footer::before{
+   z-index: -3;
+   position: absolute;
+   content: "";
+   width: 200%;
+   height: 200%;
+   top: -50%;
+   left: -50%;
+   background-image: url(/public/assets/decor/ruido.png);
+   animation: ruido 1s  infinite steps(5);
+ }
+
+ @keyframes ruido {
+  
+   0%, 100%{ transform: translate(0, 0);}
+   10% { transform: translate(-5%,5%);}
+   30%{ transform: translate(10%, 20%);}
+   60%{ transform: translate(20%, 20%);}
+   90%{ transform: translate(-9%, -4%);}
+   }
+ 
+   .footer a{
+      color: #fff;
+      font-size: 1.15rem;
+      text-decoration: none;
+   }
+
+   .cont-sociales{
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #fff;
+      font-size: 1.15rem;
+      font-family: "Poiret One";
+   }
+
+   .footer a:hover{
+      color: goldenrod;
+   }
