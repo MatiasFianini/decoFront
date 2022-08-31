@@ -77,6 +77,10 @@
 }
 
 @media (max-width: 1000px) {
+
+    .product-loading{
+        line-height: 20px;
+    }
     .product-grid{
         grid-template-columns: repeat(auto-fit, 300px);
         justify-items: center;
